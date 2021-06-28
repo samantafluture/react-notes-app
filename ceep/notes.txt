@@ -1,0 +1,84 @@
+=======
+REACTJS
+=======
+
+- react -> lib para interface de usuário
+- React -> ecossistema
+
+<></>
+=====
+- precisa devolver um único elemento pai
+- precisa encapsular em algum elemento (pode ser div, section, vazio...)
+- a app devolve um único elemento que tem filhos
+- tag vazia serve para quando vc não quer estilização
+- caso queira, coloca uma section ou div
+
+COMPONENTIZAR
+=============
+- facilitar reuzo e manutenção
+
+JSX
+===
+- js dentro {}
+- porém não pode colocar loops como for, etc
+- mas pode chamar funções
+- precisa usar map() para ela poder retornar uma lista e desenhar na tela
+- o foreach() não faz isso
+
+UNIQUE KEY
+==========
+- cada filho de uma lista tem que ter uma chave única
+- toda vez que tem um loop tipo map()
+- o elemento pai tem que ter a propriedade key
+
+CSS
+===
+- há conflito de nome de classe do css
+- porque quando o react transpila, ele une todos os css em um só
+- então uma classe de um estilo de um componente (em sua pasta) fica disponível, pública, a todo o html
+- colocar como prefixo na classe css o nome do componente
+
+handle
+======
+- manuseio de eventos
+- toda vez que um evento chamda uma função no JSX, chamamos de handle ... alguma coisa
+
+BIND
+====
+- associação do método this com o objeto em si que será usado
+- isso acontece porque o this no js é dinâmico
+- se esquecer disso, o this será undefined
+
+RENDER()
+========
+- é custozo pra máquina
+- é o React que gerencia
+- a gente gerencia isso usando o método state
+- quando atualizamos o state, o React chama o render()
+- pra atualizar o state, temos que usar um setter
+
+SVG
+===
+- podem ser importados como componentes usando React 
+
+STATEFULL
+=========
+- componentes que tem estado e que gerenciamos informações
+- stateless -> componente simples sem estado, apenas renderiza, não gerencia estamo interno ou tem eventos que alteram estado
+- mais stateless do que statefull
+- trazer o estado para um nível mais alto, o app por exemplo
+- isso facilita a manutenção e abaixa o acoplamento
+
+STATE
+=====
+- não é ideal guardar tudo no app.js
+- os dados da aplicação devem ficar fora da árvore de renderização
+- react é uma lib de renderização visual de componentes
+- por isso, não deveria ter que guardar dados
+- os componentes são a visualização dos meus dados
+- dados devem ser armazenados em outra entidade
+- o que vamos usar: novas classes (uma para categoria e guardar as infos dela, e outra pra notas, e guardar as infos dela)
+
+
+
+
