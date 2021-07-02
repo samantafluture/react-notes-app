@@ -7,6 +7,20 @@ class Form extends Component {
     this.title = "";
     this.text = "";
     this.category = "Uncategorized";
+    this.state = {categories: []};
+    this._newCategories = this._newCategories.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.categories.subscribe(this._newCategories);
+  }
+
+  componentWillUnmount(){
+    this.props.categories.unsubscribe(this._newCategories);
+  }
+
+  _newCategories(categories){
+    this.setState({...this.state, categories});
   }
 
   handleChangeCategory(event){
@@ -38,8 +52,8 @@ class Form extends Component {
           className="form-cadastro_input"
         >
           <option>-- Choose a category --</option>
-          {this.props.categories.map((category) => {
-            return <option>{category}</option>;
+          {this.state.categories.map((category, index) => {
+            return <option key={index}>{category}</option>;
           })}
         </select>
         <input
